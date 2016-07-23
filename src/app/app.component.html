@@ -1,3 +1,10 @@
 <h1>
   {{title}}
+  
+  <button *ngIf="!login" (click)="facebookLogin()" >Login via Facebook</button>
+  <div *ngIf="loggedInUser">
+    LoggedInUser:
+    <span>{{loggedInUser}}</span>
+  </div>
+  
 </h1>
