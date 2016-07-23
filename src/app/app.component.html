@@ -1,10 +1,21 @@
-<h1>
-  {{title}}
-  
-  <button *ngIf="!login" (click)="facebookLogin()" >Login via Facebook</button>
-  <div *ngIf="loggedInUser">
-    LoggedInUser:
-    <span>{{loggedInUser}}</span>
-  </div>
-  
-</h1>
+
+
+<div class="loginContainer">
+
+
+	
+	 <button [disabled]="login" [ngClass]="{userProfileImage:imageUrl}"[style.background-image]="'url(' + imageUrl + ')'"  (click)="fbLogin()" >{{loggedInUser}}</button>
+
+</div>
+ <div class="user-info-container">
+		<span (click)="getFacebookPublicInfo()" class="public-info">PublicInfo</span>
+		<span (click)="getFacebookTimeLineInfo()" class="feed-info">TimeLine Posts</span>
+ </div>
+ <div class="public-info">
+ 	{{publicInfo | json}}
+ 	{{timelineFeeds | json}}
+ </div>
+
+<!-- <div class="side-container">
+	
+</div> -->
